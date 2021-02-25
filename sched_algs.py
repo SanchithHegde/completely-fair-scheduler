@@ -30,7 +30,7 @@ def _schedule_key(
     tasks: List[dict], quantum: int, key: Callable[[dict], Tuple[int, int, int]]
 ):
     """
-    Schedule tasks according to algorithm determined byt the key and set waiting and
+    Schedule tasks according to algorithm determined by the key and set waiting and
     turnaround times.
     """
 
