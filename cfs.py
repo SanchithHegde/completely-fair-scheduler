@@ -1,20 +1,26 @@
 #!/usr/bin/env python3
 
-""" Program to simulate Completely Fair Scheduler (CFS). """
+"""
+Program to simulate Completely Fair Scheduler (CFS).
+"""
 
-import sys
 import random
+import sys
 from math import floor
 from typing import Callable, List
-from sortedcontainers import SortedKeyList
+
 import numpy
+from sortedcontainers import SortedKeyList
 from tabulate import tabulate
+
 import sched_algs
 
 
 def cfs_schedule(tasks: List[dict], quantum: int):
-    """ Schedule tasks according to CFS algorithm and set waiting and
-        turnaround times. """
+    """
+    Schedule tasks according to CFS algorithm and set waiting and turnaround times.
+    """
+
     get_vruntime: Callable[[dict], int] = lambda task: task["vruntime"]
     get_nice: Callable[[dict], int] = lambda task: task["nice"]
 
@@ -70,7 +76,10 @@ def cfs_schedule(tasks: List[dict], quantum: int):
 
 
 def display_tasks(tasks: List[dict]):
-    """ Print all tasks' information in a table. """
+    """
+    Print all tasks' information in a table.
+    """
+
     headers = [
         "ID",
         "Arrival Time",
@@ -80,6 +89,7 @@ def display_tasks(tasks: List[dict]):
         "Turnaround Time",
     ]
     tasks_mat = []
+
     for task in tasks:
         tasks_mat.append(
             [
@@ -99,11 +109,15 @@ def display_tasks(tasks: List[dict]):
 
 
 def find_avg_time(tasks: List[dict]):
-    """ Find average waiting and turnaround time. """
+    """
+    Find average waiting and turnaround time.
+    """
+
     waiting_times = []
     total_wt = 0
     total_tat = 0
     num = len(tasks)
+
     for task in tasks:
         waiting_times.append(task["waiting_time"])
         total_wt += task["waiting_time"]
@@ -118,7 +132,10 @@ def find_avg_time(tasks: List[dict]):
 
 
 def reset_tasks(tasks: List[dict]):
-    """ Reset task execution details. """
+    """
+    Reset task execution details.
+    """
+
     for task in tasks:
         task["vruntime"] = 0
         task["exec_time"] = 0
