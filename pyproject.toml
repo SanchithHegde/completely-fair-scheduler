@@ -1,0 +1,21 @@
+[tool.poetry]
+name        = "completely-fair-scheduler"
+version     = "0.1.0"
+description = "Simulation of the Completely Fair Scheduler (CFS)"
+authors     = [ "Sanchith Hegde <sanchith.hegde01@gmail.com>" ]
+license     = "MIT"
+
+[tool.poetry.dependencies]
+python           = "^3.8"
+sortedcontainers = "^2.3.0"
+tabulate         = "^0.8.9"
+numpy            = "^1.20.1"
+
+[tool.poetry.dev-dependencies]
+black        = { version = "^20.8b1", allow-prereleases = true }
+mypy         = { version = "^0.812", allow-prereleases = true }
+docformatter = { version = "^1.4", allow-prereleases = true }
+
+[build-system]
+requires      = [ "poetry-core>=1.0.0" ]
+build-backend = "poetry.core.masonry.api"
