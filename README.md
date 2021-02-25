@@ -1,13 +1,28 @@
 # Completely Fair Scheduler (CFS)
 
-The process scheduler used in Linux kernel (since version 2.6.23), simulated 
-using Python. The only change is that it uses SortedKeyList instead of a 
+The process scheduler used in Linux kernel (since version 2.6.23), simulated
+using Python. The only change is that it uses SortedKeyList instead of a
 red-black tree, but has the same time complexity of operations.
 
 ## Installing Dependencies
 
-Run `pip3 install -r requirements.txt` to install the dependencies, with the 
-`--user` flag if required.
+- Install [`poetry`](https://python-poetry.org/docs/).
+- Install requirements:
+
+  ```shell
+  poetry install --no-root
+  ```
+
+- Activate the environment:
+
+  ```shell
+  poetry shell
+  ```
 
 ## Running
-```python3 cfs.py```
+
+`python3 cfs.py`
+
+## License
+
+[MIT](LICENSE)
